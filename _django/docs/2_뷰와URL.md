@@ -39,7 +39,7 @@ _django/
 
 - `pybo` 앱에 관련된 내용은 해당 디렉토리 하위에 위치해야 관리하기 편함
 - `pybo` 앱에서만 사용되는 URL은 `config/urls.py` 위치가 아닌 `pybo/urls.py` 파일에서 관리
-- `config/urls.py`의 URL과 include 함수로 매핑된 URL을 합쳐서 라우팅 
+- `config/urls.py`의 URL과 include 함수로 매핑된 URL을 합쳐서 라우팅
 
 | config/urls.py | +   | pybo/urls.py       | =   | 최종 URL                  |
 |----------------|-----|--------------------|-----|-------------------------|

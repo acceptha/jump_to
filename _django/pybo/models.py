@@ -11,6 +11,8 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)  # 질문, 질문을 삭제할 경우 연결된 답변도 함께 삭제하는 CASCADE 옵션 설정
+    question = models.ForeignKey(
+        Question, on_delete=models.CASCADE
+    )  # 질문, 질문을 삭제할 경우 연결된 답변도 함께 삭제하는 CASCADE 옵션 설정
     content = models.TextField()  # 답변의 내용
     create_date = models.DateTimeField()  # 답변을 작성한 일시
