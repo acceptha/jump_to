@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h5 class="my-3 border-bottom pb-2">질문등록</h5>
+    <form method="post">
+    <!-- action의 기본값은 현재 페이지, 속성을 지정하고 싶으면 action="{% url 'pybo:question_create' %}" 작성
+         그러나 지정할 경우 질문을 생성할 때만 템플릿이 사용 가능, 즉, 질문 수정을 위한 템플릿을 따로 만들어야 함
+         action 속성을 비워두면 질문 수정 URL에서도 사용 가능 -->
+        {% csrf_token %}
+        {{ form.as_p }}
+        <!-- form은 render 함수에서 전달받은 파라미터
+             form은 QuestionForm 객체로 pybo/form.py 파일에서 정의한 subject, content 속성에 해당하는 HTML 코드를 자동 생성 -->
+        <button type="submit" class="btn btn-primary">저장하기</button>
+    </form>
+</div>
+{% endblock %}
