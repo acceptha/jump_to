@@ -7,10 +7,11 @@ class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question  # 사용할 모델
         fields = ["subject", "content"]  # QuestionForm에서 사용할 Question 모델의 속성
-        widgets = {
-            "subject": forms.TextInput(attrs={"class": "form-control"}),
-            "content": forms.Textarea(attrs={"class": "form-control", "rows": 10}),
-        }
+        # 수동 폼을 사용할 때는 필요 없음
+        # widgets = {
+        #     "subject": forms.TextInput(attrs={"class": "form-control"}),
+        #     "content": forms.Textarea(attrs={"class": "form-control", "rows": 10}),
+        # }
         labels = {
             "subject": "제목",
             "content": "내용",
